@@ -1,0 +1,22 @@
+{
+  "name": "webrtc-video-chat",
+  "version": "1.0.0",
+  "description": "基于Node.js和WebRTC的视频通话应用",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "ws": "^8.14.2"
+  },
+  "keywords": [
+    "webrtc",
+    "video",
+    "chat",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "MIT"
+}

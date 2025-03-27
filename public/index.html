@@ -1,0 +1,78 @@
+<!--
+ * @Author: linqibin
+ * @Date: 2025-03-18 10:52:41
+ * @LastEditors: linqibin
+ * @LastEditTime: 2025-03-19 18:02:34
+ * @Description: 
+ * 
+ * Copyright (c) 2025 by 智慧空间研究院/金地空间科技, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebRTC视频通话</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 登录容器 -->
+    <div id="loginContainer" class="login-container">
+      <h2>加入视频通话</h2>
+      <div class="login-form">
+        <input type="text" id="username" placeholder="输入你的用户名" />
+        <button id="joinBtn">加入</button>
+      </div>
+    </div>
+
+    <!-- 聊天容器 -->
+    <div id="chatContainer" class="chat-container hidden">
+      <div class="sidebar">
+        <h2>在线用户</h2>
+        <ul id="userList"></ul>
+      </div>
+      
+      <div class="main-content">
+        <!-- 视频区域 -->
+        <div class="video-container">
+          <div class="video-wrapper">
+            <video id="localVideo" autoplay playsinline muted></video>
+            <div class="video-label">我</div>
+          </div>
+          <div class="video-wrapper">
+            <video id="remoteVideo" autoplay playsinline muted></video>
+            <div id="remoteVideoLabel" class="video-label">对方</div>
+          </div>
+        </div>
+
+        <!-- 控制按钮 -->
+        <div class="controls">
+          <button id="callBtn" disabled>呼叫</button>
+          <button id="hangupBtn" disabled>挂断</button>
+          <button id="toggleVideoBtn">关闭视频</button>
+          <button id="toggleAudioBtn">关闭音频</button>
+        </div>
+
+        <!-- 通话状态 -->
+        <div id="callStatus" class="call-status"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 呼叫对话框 -->
+  <div id="callDialog" class="call-dialog hidden">
+    <div class="call-dialog-content">
+      <p><span id="callerName"></span> 正在呼叫你</p>
+      <div class="call-dialog-buttons">
+        <button id="acceptCallBtn">接受</button>
+        <button id="rejectCallBtn">拒绝</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 引入Socket.io和主要JavaScript文件 -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
